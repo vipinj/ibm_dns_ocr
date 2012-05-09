@@ -18,8 +18,8 @@ def singlehop_clusters(gr,mal,benign): # gr = networkx graph, malfile_name, beni
     gr = nr.load_mal_graph(ml,gr) # marks nodes with -ve trust
     gr = nr.load_benign_graph(bl,gr) # marks nodes with +ve trust
 
-    tstr = mal.join("_clusters")
-    tstr2 = benign.join("_clusters")
+    tstr = mal+"_clusters"
+    tstr2 = benign+"_clusters"
     f1 = open(tstr,'w')
     f2 = open(tstr2,'w')
 
