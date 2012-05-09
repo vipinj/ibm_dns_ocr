@@ -1,4 +1,5 @@
 *.py[co]
+*.txt
 *.pickle
 # Packages
 *.egg
