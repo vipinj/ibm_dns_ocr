@@ -9,9 +9,10 @@ import new_rules as nr
 import new_train as nt
 
 # Single hop results are not great, a malicious domain expecting its hosting ip to be malicious 
-# in the given blacklists is not very highly probable
+# in the given blacklists is not very highly probable unless I have a large blacklist
 
 def singlehop_clusters(gr,mal,benign): # gr = networkx graph, malfile_name, benignfile_name
+    nr.reset_graph_trust(gr)
     ml = nr.load_mal(mal)
     bl = nr.load_benign(benign)
     
