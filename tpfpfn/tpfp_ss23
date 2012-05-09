@@ -1,0 +1,480 @@
+###################### Iteration: 1 ######################
+Values: POS_SCORE: 0.100000, NEG_SCORE: -0.100000, POS_SC: 0.100000, NEG_SC: -0.100000
+tp_num: 277
+fp_num: 0
+tn_num: 0
+fn_num: 463
+is neighbor(of testing): 5164
+Present in neighborhood, but no score(should be marked as false -ves: 4283 ?
+not_neighbor: 0
+not_in_graph: 0
+Negative more than threshold: 29457
+Positive less than threshold: 0
+Negative less than threshold(fp): 10854
+Positive more than threshold(tn): 1478639
+
+###################### Iteration: 1 ######################
+Values: POS_SCORE: 0.100000, NEG_SCORE: -0.100000, POS_SC: 0.100000, NEG_SC: -0.200000
+tp_num: 244
+fp_num: 0
+tn_num: 0
+fn_num: 504
+is neighbor(of testing): 5164
+Present in neighborhood, but no score(should be marked as false -ves: 4238 ?
+not_neighbor: 0
+not_in_graph: 0
+Negative more than threshold: 42484
+Positive less than threshold: 0
+Negative less than threshold(fp): 9256
+Positive more than threshold(tn): 1480167
+
+###################### Iteration: 1 ######################
+Values: POS_SCORE: 0.100000, NEG_SCORE: -0.100000, POS_SC: 0.100000, NEG_SC: -0.300000
+tp_num: 162
+fp_num: 0
+tn_num: 0
+fn_num: 565
+is neighbor(of testing): 5164
+Present in neighborhood, but no score(should be marked as false -ves: 4268 ?
+not_neighbor: 0
+not_in_graph: 0
+Negative more than threshold: 43410
+Positive less than threshold: 0
+Negative less than threshold(fp): 7877
+Positive more than threshold(tn): 1481571
+
+###################### Iteration: 1 ######################
+Values: POS_SCORE: 0.100000, NEG_SCORE: -0.100000, POS_SC: 0.100000, NEG_SC: -0.400000
+tp_num: 149
+fp_num: 0
+tn_num: 0
+fn_num: 573
+is neighbor(of testing): 5164
+Present in neighborhood, but no score(should be marked as false -ves: 4316 ?
+not_neighbor: 0
+not_in_graph: 0
+Negative more than threshold: 27392
+Positive less than threshold: 0
+Negative less than threshold(fp): 7065
+Positive more than threshold(tn): 1482319
+
+###################### Iteration: 1 ######################
+Values: POS_SCORE: 0.100000, NEG_SCORE: -0.100000, POS_SC: 0.100000, NEG_SC: -0.500000
+tp_num: 144
+fp_num: 0
+tn_num: 0
+fn_num: 585
+is neighbor(of testing): 5164
+Present in neighborhood, but no score(should be marked as false -ves: 4274 ?
+not_neighbor: 0
+not_in_graph: 0
+Negative more than threshold: 21405
+Positive less than threshold: 0
+Negative less than threshold(fp): 6980
+Positive more than threshold(tn): 1482453
+
+###################### Iteration: 1 ######################
+Values: POS_SCORE: 0.100000, NEG_SCORE: -0.100000, POS_SC: 0.100000, NEG_SC: -0.600000
+tp_num: 137
+fp_num: 0
+tn_num: 0
+fn_num: 589
+is neighbor(of testing): 5164
+Present in neighborhood, but no score(should be marked as false -ves: 4294 ?
+not_neighbor: 0
+not_in_graph: 0
+Negative more than threshold: 31936
+Positive less than threshold: 0
+Negative less than threshold(fp): 7093
+Positive more than threshold(tn): 1482492
+
+###################### Iteration: 1 ######################
+Values: POS_SCORE: 0.100000, NEG_SCORE: -0.100000, POS_SC: 0.100000, NEG_SC: -0.700000
+tp_num: 160
+fp_num: 0
+tn_num: 0
+fn_num: 579
+is neighbor(of testing): 5164
+Present in neighborhood, but no score(should be marked as false -ves: 4328 ?
+not_neighbor: 0
+not_in_graph: 0
+Negative more than threshold: 29988
+Positive less than threshold: 0
+Negative less than threshold(fp): 6866
+Positive more than threshold(tn): 1482505
+
+###################### Iteration: 1 ######################
+Values: POS_SCORE: 0.100000, NEG_SCORE: -0.100000, POS_SC: 0.100000, NEG_SC: -0.800000
+tp_num: 150
+fp_num: 0
+tn_num: 0
+fn_num: 586
+is neighbor(of testing): 5164
+Present in neighborhood, but no score(should be marked as false -ves: 4253 ?
+not_neighbor: 0
+not_in_graph: 0
+Negative more than threshold: 36623
+Positive less than threshold: 0
+Negative less than threshold(fp): 7007
+Positive more than threshold(tn): 1482487
+
+###################### Iteration: 1 ######################
+Values: POS_SCORE: 0.100000, NEG_SCORE: -0.100000, POS_SC: 0.100000, NEG_SC: -0.900000
+tp_num: 143
+fp_num: 0
+tn_num: 0
+fn_num: 583
+is neighbor(of testing): 5164
+Present in neighborhood, but no score(should be marked as false -ves: 4322 ?
+not_neighbor: 0
+not_in_graph: 0
+Negative more than threshold: 33006
+Positive less than threshold: 0
+Negative less than threshold(fp): 6880
+Positive more than threshold(tn): 1482501
+
+###################### Iteration: 1 ######################
+Values: POS_SCORE: 0.100000, NEG_SCORE: -0.100000, POS_SC: 0.100000, NEG_SC: -1.000000
+tp_num: 155
+fp_num: 0
+tn_num: 0
+fn_num: 589
+is neighbor(of testing): 5164
+Present in neighborhood, but no score(should be marked as false -ves: 4282 ?
+not_neighbor: 0
+not_in_graph: 0
+Negative more than threshold: 31852
+Positive less than threshold: 0
+Negative less than threshold(fp): 6929
+Positive more than threshold(tn): 1482495
+
+###################### Iteration: 1 ######################
+Values: POS_SCORE: 0.100000, NEG_SCORE: -0.100000, POS_SC: 0.100000, NEG_SC: -1.100000
+tp_num: 110
+fp_num: 0
+tn_num: 0
+fn_num: 617
+is neighbor(of testing): 5164
+Present in neighborhood, but no score(should be marked as false -ves: 4403 ?
+not_neighbor: 0
+not_in_graph: 0
+Negative more than threshold: 27153
+Positive less than threshold: 0
+Negative less than threshold(fp): 6631
+Positive more than threshold(tn): 1482704
+
+###################### Iteration: 1 ######################
+Values: POS_SCORE: 0.100000, NEG_SCORE: -0.100000, POS_SC: 0.200000, NEG_SC: -0.100000
+tp_num: 280
+fp_num: 0
+tn_num: 0
+fn_num: 464
+is neighbor(of testing): 5164
+Present in neighborhood, but no score(should be marked as false -ves: 4300 ?
+not_neighbor: 0
+not_in_graph: 0
+Negative more than threshold: 29559
+Positive less than threshold: 0
+Negative less than threshold(fp): 10796
+Positive more than threshold(tn): 1478701
+
+###################### Iteration: 1 ######################
+Values: POS_SCORE: 0.100000, NEG_SCORE: -0.100000, POS_SC: 0.200000, NEG_SC: -0.200000
+tp_num: 259
+fp_num: 0
+tn_num: 0
+fn_num: 500
+is neighbor(of testing): 5164
+Present in neighborhood, but no score(should be marked as false -ves: 4218 ?
+not_neighbor: 0
+not_in_graph: 0
+Negative more than threshold: 52039
+Positive less than threshold: 0
+Negative less than threshold(fp): 9281
+Positive more than threshold(tn): 1480220
+
+###################### Iteration: 1 ######################
+Values: POS_SCORE: 0.100000, NEG_SCORE: -0.100000, POS_SC: 0.200000, NEG_SC: -0.300000
+tp_num: 171
+fp_num: 0
+tn_num: 0
+fn_num: 563
+is neighbor(of testing): 5164
+Present in neighborhood, but no score(should be marked as false -ves: 4306 ?
+not_neighbor: 0
+not_in_graph: 0
+Negative more than threshold: 34940
+Positive less than threshold: 0
+Negative less than threshold(fp): 7892
+Positive more than threshold(tn): 1481638
+
+###################### Iteration: 1 ######################
+Values: POS_SCORE: 0.100000, NEG_SCORE: -0.100000, POS_SC: 0.200000, NEG_SC: -0.400000
+tp_num: 155
+fp_num: 0
+tn_num: 0
+fn_num: 569
+is neighbor(of testing): 5164
+Present in neighborhood, but no score(should be marked as false -ves: 4360 ?
+not_neighbor: 0
+not_in_graph: 0
+Negative more than threshold: 31464
+Positive less than threshold: 0
+Negative less than threshold(fp): 7164
+Positive more than threshold(tn): 1482317
+
+###################### Iteration: 1 ######################
+Values: POS_SCORE: 0.100000, NEG_SCORE: -0.100000, POS_SC: 0.200000, NEG_SC: -0.500000
+tp_num: 145
+fp_num: 0
+tn_num: 0
+fn_num: 581
+is neighbor(of testing): 5164
+Present in neighborhood, but no score(should be marked as false -ves: 4283 ?
+not_neighbor: 0
+not_in_graph: 0
+Negative more than threshold: 48559
+Positive less than threshold: 0
+Negative less than threshold(fp): 6927
+Positive more than threshold(tn): 1482479
+
+###################### Iteration: 1 ######################
+Values: POS_SCORE: 0.100000, NEG_SCORE: -0.100000, POS_SC: 0.200000, NEG_SC: -0.600000
+tp_num: 141
+fp_num: 0
+tn_num: 0
+fn_num: 577
+is neighbor(of testing): 5164
+Present in neighborhood, but no score(should be marked as false -ves: 4330 ?
+not_neighbor: 0
+not_in_graph: 0
+Negative more than threshold: 42933
+Positive less than threshold: 0
+Negative less than threshold(fp): 6956
+Positive more than threshold(tn): 1482468
+
+###################### Iteration: 1 ######################
+Values: POS_SCORE: 0.100000, NEG_SCORE: -0.100000, POS_SC: 0.200000, NEG_SC: -0.700000
+tp_num: 135
+fp_num: 0
+tn_num: 0
+fn_num: 592
+is neighbor(of testing): 5164
+Present in neighborhood, but no score(should be marked as false -ves: 4313 ?
+not_neighbor: 0
+not_in_graph: 0
+Negative more than threshold: 39970
+Positive less than threshold: 0
+Negative less than threshold(fp): 6987
+Positive more than threshold(tn): 1482512
+
+###################### Iteration: 1 ######################
+Values: POS_SCORE: 0.100000, NEG_SCORE: -0.100000, POS_SC: 0.200000, NEG_SC: -0.800000
+tp_num: 126
+fp_num: 0
+tn_num: 0
+fn_num: 589
+is neighbor(of testing): 5164
+Present in neighborhood, but no score(should be marked as false -ves: 4267 ?
+not_neighbor: 0
+not_in_graph: 0
+Negative more than threshold: 33515
+Positive less than threshold: 0
+Negative less than threshold(fp): 7072
+Positive more than threshold(tn): 1482494
+
+###################### Iteration: 1 ######################
+Values: POS_SCORE: 0.100000, NEG_SCORE: -0.100000, POS_SC: 0.200000, NEG_SC: -0.900000
+tp_num: 146
+fp_num: 0
+tn_num: 0
+fn_num: 590
+is neighbor(of testing): 5164
+Present in neighborhood, but no score(should be marked as false -ves: 4332 ?
+not_neighbor: 0
+not_in_graph: 0
+Negative more than threshold: 37002
+Positive less than threshold: 0
+Negative less than threshold(fp): 6897
+Positive more than threshold(tn): 1482487
+
+###################### Iteration: 1 ######################
+Values: POS_SCORE: 0.100000, NEG_SCORE: -0.100000, POS_SC: 0.200000, NEG_SC: -1.000000
+tp_num: 151
+fp_num: 0
+tn_num: 0
+fn_num: 593
+is neighbor(of testing): 5164
+Present in neighborhood, but no score(should be marked as false -ves: 4286 ?
+not_neighbor: 0
+not_in_graph: 0
+Negative more than threshold: 45364
+Positive less than threshold: 0
+Negative less than threshold(fp): 6938
+Positive more than threshold(tn): 1482504
+
+###################### Iteration: 1 ######################
+Values: POS_SCORE: 0.100000, NEG_SCORE: -0.100000, POS_SC: 0.200000, NEG_SC: -1.100000
+tp_num: 113
+fp_num: 0
+tn_num: 0
+fn_num: 617
+is neighbor(of testing): 5164
+Present in neighborhood, but no score(should be marked as false -ves: 4310 ?
+not_neighbor: 0
+not_in_graph: 0
+Negative more than threshold: 33714
+Positive less than threshold: 0
+Negative less than threshold(fp): 6802
+Positive more than threshold(tn): 1482705
+
+###################### Iteration: 1 ######################
+Values: POS_SCORE: 0.100000, NEG_SCORE: -0.100000, POS_SC: 0.300000, NEG_SC: -0.100000
+tp_num: 284
+fp_num: 0
+tn_num: 0
+fn_num: 455
+is neighbor(of testing): 5164
+Present in neighborhood, but no score(should be marked as false -ves: 4298 ?
+not_neighbor: 0
+not_in_graph: 0
+Negative more than threshold: 44720
+Positive less than threshold: 0
+Negative less than threshold(fp): 10696
+Positive more than threshold(tn): 1478684
+
+###################### Iteration: 1 ######################
+Values: POS_SCORE: 0.100000, NEG_SCORE: -0.100000, POS_SC: 0.300000, NEG_SC: -0.200000
+tp_num: 235
+fp_num: 0
+tn_num: 0
+fn_num: 505
+is neighbor(of testing): 5164
+Present in neighborhood, but no score(should be marked as false -ves: 4267 ?
+not_neighbor: 0
+not_in_graph: 0
+Negative more than threshold: 45885
+Positive less than threshold: 0
+Negative less than threshold(fp): 9096
+Positive more than threshold(tn): 1480283
+
+###################### Iteration: 1 ######################
+Values: POS_SCORE: 0.100000, NEG_SCORE: -0.100000, POS_SC: 0.300000, NEG_SC: -0.300000
+tp_num: 186
+fp_num: 0
+tn_num: 0
+fn_num: 556
+is neighbor(of testing): 5164
+Present in neighborhood, but no score(should be marked as false -ves: 4288 ?
+not_neighbor: 0
+not_in_graph: 0
+Negative more than threshold: 27893
+Positive less than threshold: 0
+Negative less than threshold(fp): 7830
+Positive more than threshold(tn): 1481597
+
+###################### Iteration: 1 ######################
+Values: POS_SCORE: 0.100000, NEG_SCORE: -0.100000, POS_SC: 0.300000, NEG_SC: -0.400000
+tp_num: 162
+fp_num: 0
+tn_num: 0
+fn_num: 576
+is neighbor(of testing): 5164
+Present in neighborhood, but no score(should be marked as false -ves: 4285 ?
+not_neighbor: 0
+not_in_graph: 0
+Negative more than threshold: 34609
+Positive less than threshold: 0
+Negative less than threshold(fp): 7200
+Positive more than threshold(tn): 1482294
+
+###################### Iteration: 1 ######################
+Values: POS_SCORE: 0.100000, NEG_SCORE: -0.100000, POS_SC: 0.300000, NEG_SC: -0.500000
+tp_num: 142
+fp_num: 0
+tn_num: 0
+fn_num: 585
+is neighbor(of testing): 5164
+Present in neighborhood, but no score(should be marked as false -ves: 4322 ?
+not_neighbor: 0
+not_in_graph: 0
+Negative more than threshold: 42856
+Positive less than threshold: 0
+Negative less than threshold(fp): 7100
+Positive more than threshold(tn): 1482482
+
+###################### Iteration: 1 ######################
+Values: POS_SCORE: 0.100000, NEG_SCORE: -0.100000, POS_SC: 0.300000, NEG_SC: -0.600000
+tp_num: 166
+fp_num: 0
+tn_num: 0
+fn_num: 580
+is neighbor(of testing): 5164
+Present in neighborhood, but no score(should be marked as false -ves: 4234 ?
+not_neighbor: 0
+not_in_graph: 0
+Negative more than threshold: 41445
+Positive less than threshold: 0
+Negative less than threshold(fp): 7068
+Positive more than threshold(tn): 1482494
+
+###################### Iteration: 1 ######################
+Values: POS_SCORE: 0.100000, NEG_SCORE: -0.100000, POS_SC: 0.300000, NEG_SC: -0.700000
+tp_num: 137
+fp_num: 0
+tn_num: 0
+fn_num: 581
+is neighbor(of testing): 5164
+Present in neighborhood, but no score(should be marked as false -ves: 4344 ?
+not_neighbor: 0
+not_in_graph: 0
+Negative more than threshold: 37364
+Positive less than threshold: 0
+Negative less than threshold(fp): 6954
+Positive more than threshold(tn): 1482501
+
+###################### Iteration: 1 ######################
+Values: POS_SCORE: 0.100000, NEG_SCORE: -0.100000, POS_SC: 0.300000, NEG_SC: -0.800000
+tp_num: 130
+fp_num: 0
+tn_num: 0
+fn_num: 597
+is neighbor(of testing): 5164
+Present in neighborhood, but no score(should be marked as false -ves: 4240 ?
+not_neighbor: 0
+not_in_graph: 0
+Negative more than threshold: 52001
+Positive less than threshold: 0
+Negative less than threshold(fp): 6920
+Positive more than threshold(tn): 1482487
+
+###################### Iteration: 1 ######################
+Values: POS_SCORE: 0.100000, NEG_SCORE: -0.100000, POS_SC: 0.300000, NEG_SC: -0.900000
+tp_num: 145
+fp_num: 0
+tn_num: 0
+fn_num: 587
+is neighbor(of testing): 5164
+Present in neighborhood, but no score(should be marked as false -ves: 4332 ?
+not_neighbor: 0
+not_in_graph: 0
+Negative more than threshold: 31683
+Positive less than threshold: 0
+Negative less than threshold(fp): 7067
+Positive more than threshold(tn): 1482498
+
+###################### Iteration: 1 ######################
+Values: POS_SCORE: 0.100000, NEG_SCORE: -0.100000, POS_SC: 0.300000, NEG_SC: -1.000000
+tp_num: 144
+fp_num: 0
+tn_num: 0
+fn_num: 581
+is neighbor(of testing): 5164
+Present in neighborhood, but no score(should be marked as false -ves: 4289 ?
+not_neighbor: 0
+not_in_graph: 0
+Negative more than threshold: 42126
+Positive less than threshold: 0
+Negative less than threshold(fp): 6934
+Positive more than threshold(tn): 1482512
+

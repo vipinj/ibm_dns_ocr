@@ -1,5 +1,5 @@
 *.py[co]
-
+*.pickle
 # Packages
 *.egg
 *.egg-info
