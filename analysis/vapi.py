@@ -77,6 +77,23 @@ def query_graph(gr):
     except:
       print "Error"
       pass
+def query_graph_single(gr): # only first hop neighbors
+  while True:
+    try:
+      var = raw_input("Enter the domain/ip to be outputted:")
+      var = var.rstrip()
+      if var == "NO":
+        break;
+      elif var in gr:
+        print gr.node[var]['type'], len(gr.neighbors(var))
+        for e in gr.edge[var]:
+          print e,gr.node[e]['type']
+      else:
+        print "Not found in graph"
+  #    print gr.neighbors(var.rstrip())
+    except:
+      print "Error"
+      pass
 
 def stats(gr):
     ips = 0

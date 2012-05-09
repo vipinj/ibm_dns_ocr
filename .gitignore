@@ -1,4 +1,13 @@
 *.py[co]
+*.db
+*.id
+*.arrays
+*.index
+*.strings
+*.names
+*.log.1
+*.log.2
+*.log.active
 *.txt
 *.pickle
 # Packages

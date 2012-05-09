@@ -60,6 +60,8 @@ def better_clusters2(gr):
     for n in gr.nodes():
         if gr.node[n]['trust_state'] < 0:
             for e in gr.edge[n]:
+                if gr.edge[n][e]['type'] == "A":
+                    name = e
                 ct1 = 0
                 if gr.node[e]['trust_state'] < 0:
                     ct1 += 1
