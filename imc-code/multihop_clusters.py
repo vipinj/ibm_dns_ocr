@@ -23,16 +23,23 @@ def singlehop_clusters(gr,mal,benign): # gr = networkx graph, malfile_name, beni
     tstr2 = benign+"_clusters"
     f1 = open(tstr,'w')
     f2 = open(tstr2,'w')
-
+    ct1 = 0
+    ct2 = 0
     for n in gr.nodes():
         if gr.node[n]['trust_state'] < 0: # malicious
             for e in gr.edge[n]:
                 if gr.node[e]['trust_state'] < 0 :
-                    f1.write("%s %s %s %s \n" %(n,e, gr.node[n]['type'],gr.node[e]['type']))
+                    ct1 += 1
+            if ct1>0:
+                f1.write("%d %s %s %s %s \n" %(ct1, n,e, gr.node[n]['type'],gr.node[e]['type']))
+
         elif gr.node[n]['trust_state'] > 0: # benign
             for e in gr.edge[n]:
+                ct2 = 0
                 if gr.node[e]['trust_state'] > 0 :
-                    f2.write("%s %s %s %s \n" %(n,e, gr.node[n]['type'],gr.node[e]['type']))
+                    ct2 += 1
+            if ct2 > 0:
+                f2.write("%d %s %s %s %s \n" %(ct2, n,e, gr.node[n]['type'],gr.node[e]['type']))
     f1.close()
     f2.close()
     
