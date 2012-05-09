@@ -1,6 +1,7 @@
 *.py[co]
 *.db
 *.id
+*.log
 *.arrays
 *.index
 *.strings
