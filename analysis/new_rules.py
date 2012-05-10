@@ -4,8 +4,8 @@ sys.path.append("/home/vipin/dnspaper/ip_dns/networkx/networkx-1.5rc1/")
 
 import networkx as nx
 import math
-#NEG_SC = -0.1
-#POS_SC = 0.1
+NEG_SC = -0.8 # from tpfp analysis, these provide better numbers, high tp, medium fp
+POS_SC = 0.6
 # def wrapper(gr):
 #   print "----------------------------------------------------------------------------------"
 #   print "Rule 1: Generate potential malicious Nameservers from malicious IPs"
@@ -214,7 +214,7 @@ def rulefive(graph,g):
 def rulesix(graph,g,POS_SC,NEG_SC):
   h = open("r6_op_condensed",'w')  
 #  p2 = float(raw_input("Please enter the ratio: "))
-  p2 = 0.4
+  p2 = 0.5
 #  p2 = 0.4
 #  print "Ratio: ", p2
   for n in graph.nodes():
@@ -277,7 +277,7 @@ def ruleseven(graph,g,POS_SC,NEG_SC):
 #  p1 = float(raw_input("Please enter the ratio: "))
 #  print "Ratio: ", p1
 #  p1 = 0.4
-  p1 = 0.4
+  p1 = 0.5
   h = open("r7_op_condensed",'w')
   for n in graph.nodes():
     if graph.node[n]['type'] == "IPv4Address":
