@@ -564,7 +564,7 @@ def load_benign_graph(benign_list, graph):
   count = 0
   for line in benign_list:
     if line in graph:
-      graph.node[line]['trust_state'] = +10
+      graph.node[line]['trust_state'] = +1
       count+=1
   print "Benign list loaded in graph"
   print "Nodes in graph", count
@@ -838,7 +838,7 @@ def bl_propagate2(gr, mald,malip,num,POS_SC,NEG_SC):
 #   mal_list2 = load_mal(mali)
   gr = load_mal_graph(mal_list2, gr)
 
-  benignf = "benign50k" # local benign file
+  benignf = "benign5k" # local benign file
   benign_list = load_benign(benignf)
   gr = load_benign_graph(benign_list, gr)
 # hold on rule 9 as it takes a lot of time
