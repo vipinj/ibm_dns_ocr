@@ -1,3 +1,4 @@
+/misc/graphdb/*
 *.py[co]
 *.db
 *.id

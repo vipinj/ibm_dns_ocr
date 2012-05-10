@@ -12,8 +12,8 @@ import new_rules as nr
 
 MAX_ITERATIONS = 2
 nruns = 10000
-#NEG_SCORE=-1 # kinda like the negative threshold for nodes, run tests and figure out a good thres score
-#POS_SCORE=1 # like the positive threshold
+NEG_SCORE=-0.1 # kinda like the negative threshold for nodes, run tests and figure out a good thres score
+POS_SCORE=0.1 # like the positive threshold
 
 #The input list contains a list of malicious ip,domains, begign ip, domains and 
 
@@ -204,8 +204,99 @@ def mark_nodes(graph,data):
 #     print "not_in_graph: "+str(not_in_graph)
 #     print "Negative more than threshold: "+str(neg_more_than_thres)
 #     print "Positive less than threshold: "+str(pos_less_than_thres)
+def identify_clusters(gr,i,fp1,fp2): # fp1 for +ve clusters, fp2 for -ve clusters
+    for n in gr.nodes():
+        npos = 0
+        nneg = 0
+        ntotal = 0
+        if i == 1: # one hop
+            if gr.node['trust_state'] < NEG_SCORE:
+                for e in gr.edge[n]:
+                    ntotal += 1
+                    if gr.node[e]['trust_state'] < NEG_SCORE:
+                        nneg += 1
+                    elif gr.node[e]['trust_state'] > POS_SCORE:
+                        npos += 1
+                    else:
+                        pass
+                if npos > nneg:
+                    continue
+                elif npos < nneg:
+                    fp2.write("%s %d %f %d %d\n" %(n,ntotal, gr.node[n]['trust_state'], npos, nneg))
+                else:
+                    pass
+            elif gr.node['trust_state'] > POS_SCORE:
+                for e in gr.edge[n]:
+                    ntotal += 1
+                    if gr.node[e]['trust_state'] > POS_SCORE:
+                        npos += 1
+                    elif gr.node[e]['trust_state'] < NEG_SCORE:
+                        nneg += 1
+                    else:
+                        pass
+                if npos > nneg:
+                    fp1.write("%s %d %f %d %d\n" %(n,ntotal, gr.node[n]['trust_state'], npos, nneg))
+                elif npos < nneg:
+                    continue
+                else:
+                    pass
+            else:
+                pass
+        elif i == 2: # two hop
+            if gr.node['trust_state'] < NEG_SCORE:
+                for e in gr.edge[n]:
+                    ntotal += 1
+                    if gr.node[e]['trust_state'] < NEG_SCORE:
+                        nneg += 1
+                    elif gr.node[e]['trust_state'] > POS_SCORE:
+                        npos += 1
+                    else:
+                        pass
+                    for f in gr.edge[e]:
+                        ntotal += 1
+                        if gr.node[f]['trust_state'] < NEG_SCORE :
+                            nneg += 1
+                        elif gr.node[f]['trust_state'] > POS_SCORE:
+                            npos += 1
+                        else:
+                            pass
+                if npos > nneg:
+                    continue
+                elif npos < nneg:
+                    fp2.write("%s %d %f %d %d\n" %(n,ntotal, gr.node[n]['trust_state'], npos, nneg))
+                else:
+                    pass
+            elif gr.node['trust_state'] > POS_SCORE:
+                for e in gr.edge[n]:
+                    ntotal += 1
+                    if gr.node[e]['trust_state'] < NEG_SCORE:
+                        nneg += 1
+                    elif gr.node[e]['trust_state'] > POS_SCORE:
+                        npos += 1
+                    else:
+                        pass
+                    for f in gr.edge[e]:
+                        ntotal += 1
+                        if gr.node[f]['trust_state'] < NEG_SCORE :
+                            nneg += 1
+                        elif gr.node[f]['trust_state'] > POS_SCORE:
+                            npos += 1
+                        else:
+                            pass
+                if npos > nneg:
+                    fp1.write("%s %d %f %d %d\n" %(n,ntotal, gr.node[n]['trust_state'], npos, nneg))
+                elif npos < nneg:
+                    continue
+                else:
+                    pass
+            else:
+                continue
+        else:
+            print "invalid hop propagation value\n"
+            break
 
-def graph_scores2(gr,dom_file, ip_file,POS_SCORE,NEG_SCORE,POS_SC,NEG_SC,g3):
+                
+def graph_scores2(gr,dom_file, ip_file,POS_SCORE,NEG_SCORE,POS_SC,NEG_SC,g3, level): #level is for 1 or 2 hop propagation
     g1 = open(dom_file, 'r')
     g2 = open(ip_file, 'r')
 #    g3 = open("tpfp_reusults", 'w')
@@ -254,8 +345,9 @@ def graph_scores2(gr,dom_file, ip_file,POS_SCORE,NEG_SCORE,POS_SC,NEG_SC,g3):
                 n = node
                 for e in gr.edge[n]:
                     dom_ip_neigh[e] = 1
-                    for f in gr.edge[e]:
-                        dom_ip_neigh[f] = 1
+                    if level ==2:
+                        for f in gr.edge[e]:
+                            dom_ip_neigh[f] = 1
 
         for node in ip_list: # IP file
             node = node.rstrip() # again, might not be of any use
@@ -264,37 +356,10 @@ def graph_scores2(gr,dom_file, ip_file,POS_SCORE,NEG_SCORE,POS_SC,NEG_SC,g3):
                 dom_ip_neigh[n]=1
                 for e in gr.edge[n]:
                     dom_ip_neigh[e]=1
-                    for f in gr.edge[e]:
-                        dom_ip_neigh[f] =1
-
+                    if level == 2:
+                        for f in gr.edge[e]:
+                            dom_ip_neigh[f] =1
                         
-#         for node in dom_list: # domain file
-#             node = node.rstrip()  # might not be of any use now
-#             dom_neigh.append(node)
-#             if node in gr:
-#                 n = node
-#                 gr2.add_node(n)
-#                 gr2.node[n]['type'] = gr.node[n]['type']
-#                 for e in gr.edge[n]:
-#                     dom_neigh.append(e)
-#                     gr2.add_edge(n,e,type=gr.edge[n][e]['type'])
-#                     gr2.node[n]['type'] = gr.node[n]['type']
-#                     for f in gr.edge[e]:
-#                         dom_neigh.append(f)
-#                         gr2.add_edge(f,e,type=gr.edge[f][e]['type'])
-#                         gr2.node[f]['type'] = gr.node[f]['type']
-        # for node in ip_list: # IP file
-        #     node = node.rstrip() # again, might not be of any use
-        #     if node in gr:
-        #         n = node
-        #         gr2.add_node(n)
-        #         gr2.node[n]['type'] = gr.node[n]['type']
-        #         for e in gr.edge[n]:
-        #             gr2.add_edge(n,e,type=gr.edge[n][e]['type'])
-        #             gr2.node[n]['type'] = gr.node[n]['type']
-        #             for f in gr.edge[e]:
-        #                 gr2.add_edge(f,e,type=gr.edge[f][e]['type'])
-        #                 gr2.node[f]['type'] = gr.node[f]['type']
         print "Done preparing new graph..."
 
         in_graph = 0
@@ -387,6 +452,7 @@ def graph_scores2(gr,dom_file, ip_file,POS_SCORE,NEG_SCORE,POS_SC,NEG_SC,g3):
                     f3.write("%s %f\n" %(i,ret[i]))
                     continue
                 
+        identify_clusters(gr,level, fp1, fp2)
         print "Finished with tp/fp analysis"
         print "Values: POS_SCORE: %f, NEG_SCORE: %f, POS_SC: %f, NEG_SC: %f\n" %(POS_SCORE,NEG_SCORE, POS_SC, NEG_SC)
         print "Step(iteration): "+str(step)

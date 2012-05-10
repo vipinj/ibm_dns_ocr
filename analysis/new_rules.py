@@ -838,7 +838,7 @@ def bl_propagate2(gr, mald,malip,num,POS_SC,NEG_SC):
 #   mal_list2 = load_mal(mali)
   gr = load_mal_graph(mal_list2, gr)
 
-  benignf = "benign100" # local benign file
+  benignf = "benign50k" # local benign file
   benign_list = load_benign(benignf)
   gr = load_benign_graph(benign_list, gr)
 # hold on rule 9 as it takes a lot of time
