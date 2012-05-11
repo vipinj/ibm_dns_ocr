@@ -49,7 +49,7 @@ def better_clusters(gr):
     f2.close()
 def better_clusters2(gr):
     gr = nt.reset_trust_graph(gr)
-    bl = nr.load_benign("benign50k")
+    bl = nr.load_benign("benign10k")
     ml = nr.load_mal("finaldom_list.txt")
     il = nr.load_mal("finalip_list.txt")
     gr = nr.load_benign_graph(bl, gr)
@@ -62,6 +62,8 @@ def better_clusters2(gr):
             for e in gr.edge[n]:
                 if gr.edge[n][e]['type'] == "A":
                     name = e
+                    if e == '127.0.0.1':
+                        continue
                 ct1 = 0
                 if gr.node[e]['trust_state'] < 0:
                     ct1 += 1

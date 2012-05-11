@@ -528,7 +528,6 @@ def graph_cluster_parent(gr,dom_file, ip_file,level): #level is for 1 or 2 hop p
         (train_ip, test_ip) = rand_split(ip_list)
         ret = nr.bl_propagate2(gr,train_dom,train_ip,0,POS_SC,NEG_SC) 
  #        ret = nr.bl_propagate2(gr,train_dom,train_ip,1,POS_SC,NEG_SC) 
-
     fp = open("benign10k",'r')
     good_list = []
     for ln in fp:
@@ -542,10 +541,10 @@ def graph_cluster_parent(gr,dom_file, ip_file,level): #level is for 1 or 2 hop p
 
     fp1 = open("benign_clusters_op",'w')
     fp2 = open("mal_clusters_op",'w')
-#    identify_clusters(gr,level,fp1,fp2)
-    identify_clusters_known_good(gr,level,good_list) # fp1 for +ve clusters, fp2 for -ve clusters
-    print len(good_list)
-    print len(mal_test_list)
+    identify_clusters(gr,level,fp1,fp2)
+#    identify_clusters_known_good(gr,level,good_list) # fp1 for +ve clusters, fp2 for -ve clusters
+#    print len(good_list)
+#    print len(mal_test_list)
 #    identify_clusters_known_bad(gr,level,mal_test_list) # fp1 for +ve clusters, fp2 for -ve clusters
 
 
