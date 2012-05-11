@@ -299,6 +299,212 @@ def identify_clusters(gr,i,fp1,fp2): # fp1 for +ve clusters, fp2 for -ve cluster
             print "invalid hop propagation value\n"
             break
 
+def identify_clusters_known_good(gr,i,good_list): # fp1 for +ve clusters, fp2 for -ve clusters
+    fp1 = open("alexa_pos",'w')
+    fp2 = open("alexa_neg",'w')
+    for n in good_list:
+#    for n in gr.nodes():
+        npos = 0
+        nneg = 0
+        ntotal = 0
+        if n in gr:
+            if i == 1: # one hop
+                if gr.node[n]['trust_state'] < NEG_SCORE:
+                    for e in gr.edge[n]:
+                        ntotal += 1
+                        if gr.node[e]['trust_state'] < NEG_SCORE:
+                            nneg += 1
+                        elif gr.node[e]['trust_state'] > POS_SCORE:
+                            npos += 1
+                        else:
+                            pass
+                    if npos > nneg:
+                        continue
+                    elif npos < nneg:
+                        if ntotal > 2:
+                            fp2.write("%s %d %f %d %d\n" %(n,ntotal, gr.node[n]['trust_state'], npos, nneg))
+                    else:
+                        pass
+                elif gr.node[n]['trust_state'] > POS_SCORE:
+                    for e in gr.edge[n]:
+                        ntotal += 1
+                        if gr.node[e]['trust_state'] > POS_SCORE:
+                            npos += 1
+                        elif gr.node[e]['trust_state'] < NEG_SCORE:
+                            nneg += 1
+                        else:
+                            pass
+                    if npos > nneg:
+                        if ntotal >2:
+                            fp1.write("%s %d %f %d %d\n" %(n,ntotal, gr.node[n]['trust_state'], npos, nneg))
+                    elif npos < nneg:
+                        continue
+                    else:
+                        pass
+                else:
+                    pass
+            elif i == 2: # two hop
+                if gr.node[n]['trust_state'] < NEG_SCORE:
+                    for e in gr.edge[n]:
+                        ntotal += 1
+                        if gr.node[e]['trust_state'] < NEG_SCORE:
+                            nneg += 1
+                        elif gr.node[e]['trust_state'] > POS_SCORE:
+                            npos += 1
+                        else:
+                            pass
+                        for f in gr.edge[e]:
+                            ntotal += 1
+                            if gr.node[f]['trust_state'] < NEG_SCORE :
+                                nneg += 1
+                            elif gr.node[f]['trust_state'] > POS_SCORE:
+                                npos += 1
+                            else:
+                                pass
+                    if npos > nneg:
+                        continue
+                    elif npos < nneg:
+                        if ntotal >2:
+                            fp2.write("%s %d %f %d %d\n" %(n,ntotal, gr.node[n]['trust_state'], npos, nneg))
+                    else:
+                        pass
+                elif gr.node[n]['trust_state'] > POS_SCORE:
+                    for e in gr.edge[n]:
+                        ntotal += 1
+                        if gr.node[e]['trust_state'] < NEG_SCORE:
+                            nneg += 1
+                        elif gr.node[e]['trust_state'] > POS_SCORE:
+                            npos += 1
+                        else:
+                            pass
+                        for f in gr.edge[e]:
+                            ntotal += 1
+                            if gr.node[f]['trust_state'] < NEG_SCORE :
+                                nneg += 1
+                            elif gr.node[f]['trust_state'] > POS_SCORE:
+                                npos += 1
+                            else:
+                                pass
+                    if npos > nneg:
+                        if ntotal >2:
+                            fp1.write("%s %d %f %d %d\n" %(n,ntotal, gr.node[n]['trust_state'], npos, nneg))
+                    elif npos < nneg:
+                        continue
+                    else:
+                        pass
+                else:
+                    continue
+            else:
+                print "invalid hop propagation value\n"
+                break
+        else:
+            continue    
+    fp1.close()
+    fp2.close()
+
+def identify_clusters_known_bad(gr,i,bad_list): # fp1 for +ve clusters, fp2 for -ve clusters
+    fp1 = open("bad_list_good",'w')
+    fp2 = open("bad_list__neg",'w')
+    for n in bad_list:
+#    for n in gr.nodes():
+        npos = 0
+        nneg = 0
+        ntotal = 0
+        if n in gr:
+            if i == 1: # one hop
+                if gr.node[n]['trust_state'] < NEG_SCORE:
+                    for e in gr.edge[n]:
+                        ntotal += 1
+                        if gr.node[e]['trust_state'] < NEG_SCORE:
+                            nneg += 1
+                        elif gr.node[e]['trust_state'] > POS_SCORE:
+                            npos += 1
+                        else:
+                            pass
+                    if npos > nneg:
+                        continue
+                    elif npos < nneg:
+                        if ntotal > 2:
+                            fp2.write("%s %d %f %d %d\n" %(n,ntotal, gr.node[n]['trust_state'], npos, nneg))
+                    else:
+                        pass
+                elif gr.node[n]['trust_state'] > POS_SCORE:
+                    for e in gr.edge[n]:
+                        ntotal += 1
+                        if gr.node[e]['trust_state'] > POS_SCORE:
+                            npos += 1
+                        elif gr.node[e]['trust_state'] < NEG_SCORE:
+                            nneg += 1
+                        else:
+                            pass
+                    if npos > nneg:
+                        if ntotal >2:
+                            fp1.write("%s %d %f %d %d\n" %(n,ntotal, gr.node[n]['trust_state'], npos, nneg))
+                    elif npos < nneg:
+                        continue
+                    else:
+                        pass
+                else:
+                    pass
+            elif i == 2: # two hop
+                if gr.node[n]['trust_state'] < NEG_SCORE:
+                    for e in gr.edge[n]:
+                        ntotal += 1
+                        if gr.node[e]['trust_state'] < NEG_SCORE:
+                            nneg += 1
+                        elif gr.node[e]['trust_state'] > POS_SCORE:
+                            npos += 1
+                        else:
+                            pass
+                        for f in gr.edge[e]:
+                            ntotal += 1
+                            if gr.node[f]['trust_state'] < NEG_SCORE :
+                                nneg += 1
+                            elif gr.node[f]['trust_state'] > POS_SCORE:
+                                npos += 1
+                            else:
+                                pass
+                    if npos > nneg:
+                        continue
+                    elif npos < nneg:
+                        if ntotal >2:
+                            fp2.write("%s %d %f %d %d\n" %(n,ntotal, gr.node[n]['trust_state'], npos, nneg))
+                    else:
+                        pass
+                elif gr.node[n]['trust_state'] > POS_SCORE:
+                    for e in gr.edge[n]:
+                        ntotal += 1
+                        if gr.node[e]['trust_state'] < NEG_SCORE:
+                            nneg += 1
+                        elif gr.node[e]['trust_state'] > POS_SCORE:
+                            npos += 1
+                        else:
+                            pass
+                        for f in gr.edge[e]:
+                            ntotal += 1
+                            if gr.node[f]['trust_state'] < NEG_SCORE :
+                                nneg += 1
+                            elif gr.node[f]['trust_state'] > POS_SCORE:
+                                npos += 1
+                            else:
+                                pass
+                    if npos > nneg:
+                        if ntotal >2:
+                            fp1.write("%s %d %f %d %d\n" %(n,ntotal, gr.node[n]['trust_state'], npos, nneg))
+                    elif npos < nneg:
+                        continue
+                    else:
+                        pass
+                else:
+                    continue
+            else:
+                print "invalid hop propagation value\n"
+                break
+        else:
+            continue    
+    fp1.close()
+    fp2.close()
+
 def graph_cluster_parent(gr,dom_file, ip_file,level): #level is for 1 or 2 hop propagation
     g1 = open(dom_file, 'r')
     g2 = open(ip_file, 'r')
@@ -315,16 +521,34 @@ def graph_cluster_parent(gr,dom_file, ip_file,level): #level is for 1 or 2 hop p
     g2.close()
     POS_SC = 0.6
     NEG_SC = -0.8
+
     for step in range(1,MAX_ITERATIONS):         # Steps are the number of iterations
-#        num = MAX_ITERATIONS-1
+        #        num = MAX_ITERATIONS-1
         (train_dom,test_dom) = rand_split(dom_list)
         (train_ip, test_ip) = rand_split(ip_list)
         ret = nr.bl_propagate2(gr,train_dom,train_ip,0,POS_SC,NEG_SC) 
-        ret = nr.bl_propagate2(gr,train_dom,train_ip,1,POS_SC,NEG_SC) 
+ #        ret = nr.bl_propagate2(gr,train_dom,train_ip,1,POS_SC,NEG_SC) 
+
+    fp = open("benign10k",'r')
+    good_list = []
+    for ln in fp:
+        ln = ln.rstrip()
+        good_list.append(ln)
+        
+    fp.close()
+    mal_train_list = train_dom+train_ip
+    mal_test_list = test_dom+test_ip
+
+
     fp1 = open("benign_clusters_op",'w')
     fp2 = open("mal_clusters_op",'w')
-    identify_clusters(gr,level,fp1,fp2)
-                
+#    identify_clusters(gr,level,fp1,fp2)
+    identify_clusters_known_good(gr,level,good_list) # fp1 for +ve clusters, fp2 for -ve clusters
+    print len(good_list)
+    print len(mal_test_list)
+#    identify_clusters_known_bad(gr,level,mal_test_list) # fp1 for +ve clusters, fp2 for -ve clusters
+
+
 def graph_scores2(gr,dom_file, ip_file,POS_SCORE,NEG_SCORE,POS_SC,NEG_SC,g3, level): #level is for 1 or 2 hop propagation
     g1 = open(dom_file, 'r')
     g2 = open(ip_file, 'r')
